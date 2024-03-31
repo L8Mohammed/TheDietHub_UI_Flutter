@@ -88,9 +88,10 @@ class BasketScreen extends StatelessWidget{
   Widget basketIsEmptyUI(){
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset("assets/animations/emptybasket.json",height: 100.h,width: 100.w),
-          const Text("السلة فارغة")
+          Text("السلة فارغة",style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 20.sp))
         ],
       ),
     );

@@ -10,6 +10,8 @@ import 'package:thediet/ui/appbarrestaurant.dart';
 import '../../constant/myconstant.dart';
 
 class DishDetailScreen extends StatefulWidget{
+  const DishDetailScreen({super.key});
+
   @override
   State<DishDetailScreen> createState() => _DishDetailScreenState();
 }

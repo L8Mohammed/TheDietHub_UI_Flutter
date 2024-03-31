@@ -30,7 +30,9 @@ class _RHomeScreenState extends State<RHomeScreen> {
   final List _pages = [
     const RestaurantListScreen(),
     const RestaurantFavoriteScreen(),
-     BasketScreen(),
+     const Center(
+       child: Text("My Account"),
+     ),
      BasketScreen(),
   ];
 
