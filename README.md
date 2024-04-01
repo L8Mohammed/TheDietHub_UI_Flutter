@@ -1,17 +1,19 @@
 # thediet
+The Diet Hub Project
 
-A new Flutter project.
+ NOTE : VERY SCREEN CLASS CONTAINS COMMENTS TO DESCRIBE SCREEN & ITS COMPONENTS
 
-## Getting Started
+LEADING : First Screen show after Splash Screen is Welcome Screen
 
-This project is a starting point for a Flutter application.
+In lib Folder
 
-A few resources to get you started if this is your first Flutter project:
+ -Screens : consisting screens of project 
+ 
+ -ui : consisting some ui components like RestaurantItemUi .. 
+ 
+ -models : same fake Data to test app dynamically
+ 
+ -controller : using GetX package for some logical work -> YOU CAN CHANGE IT TO ANY OTHER STATA MANAGEMENT PACKAGE
+ 
+ -constant : to create some constants variables like colors and dimensions
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# TheDietHub_UI_Flutter" 
