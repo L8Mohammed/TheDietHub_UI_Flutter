@@ -1,65 +1,37 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:thediet/controller/basketcontroller.dart';
 import 'package:thediet/models/dish.dart';
 import 'package:thediet/models/restaurant.dart';
 import 'package:thediet/screens/restaurant/rhomescreen.dart';
 import 'package:thediet/ui/appbarrestaurant.dart';
 import 'package:thediet/ui/dishcardui.dart';
-
 import '../../constant/myconstant.dart';
 import '../../models/category.dart';
 import '../../ui/categoryitemui.dart';
 
-class MenuOfRestaurant extends StatefulWidget{
+/* Consisting of Restaurant title and image header on top - List of categories(CategoryItemUi exist in ui folder) - List of Dishes(DishCardUi)
+ - Bottom bar showing basket information - Bottom Modal Bar showing basket information */
+// When Tap on CategoryItemUi, you change Dishes List (Filter List by category)
+// When Tap on DishCardUi will take you To DishDetailScreen
+
+class MenuOfRestaurantScreen extends StatefulWidget{
     Restaurant restaurant;
-    MenuOfRestaurant({super.key,required this.restaurant});
+    MenuOfRestaurantScreen({super.key,required this.restaurant});
 
   @override
-  State<MenuOfRestaurant> createState() => _MenuOfRestaurantState();
+  State<MenuOfRestaurantScreen> createState() => _MenuOfRestaurantScreenState();
 }
 
-class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
+class _MenuOfRestaurantScreenState extends State<MenuOfRestaurantScreen> {
 
   final BasketController c = Get.put(BasketController());
   late int itemSelected = 1;
   late bool freeShip = true;
   late bool oldOrNew = false;
-
-  Widget listItem(Category c){
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      width: 105.w,
-      height: 45.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5), //color of shadow
-            spreadRadius: 0, //spread radius
-            blurRadius: 2, // blur radius
-            offset: const Offset(0, 2), // changes position of shadow
-          )
-        ],
-      ),
-      child:  Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(c.name,style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 12.sp),textDirection: TextDirection.rtl,),
-          SvgPicture.asset(
-            c.icon,
-            width: 25.w,
-          )
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +46,7 @@ class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
             padding: EdgeInsets.symmetric(vertical: 5.h),
             child: Column(
               children: [
+                // Restaurant title and image header on top
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -92,6 +65,7 @@ class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
                     ),
                   ],
                 ),
+                // List of categories(CategoryItemUi)
                 SizedBox(
                   height: 45.h,
                   child: ListView.builder(
@@ -177,6 +151,7 @@ class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
 
                   ),
                 ),
+                // List of Dishes(DishCardUi)
                 Container(
                   height: heightD * 0.64,
                   child: ListView.builder(
@@ -195,6 +170,7 @@ class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
               ],
             ),
           ),
+          // Bottom bar showing basket information
           Align(
             alignment: Alignment.bottomCenter,
             child: GestureDetector(
@@ -244,7 +220,7 @@ class _MenuOfRestaurantState extends State<MenuOfRestaurant> {
       ),
     );
   }
-
+  // Bottom Modal Bar showing basket information
   Widget bottomModalForTotal(BuildContext ctx){
     return Container(
       height: heightD * 0.3,

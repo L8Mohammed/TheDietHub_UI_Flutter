@@ -11,24 +11,17 @@ import 'package:thediet/ui/dishcardui.dart';
 import 'package:thediet/ui/restaurantitemui.dart';
 
 class RestaurantFavoriteScreen extends StatefulWidget  {
-
   const RestaurantFavoriteScreen({super.key});
-
   @override
   State<RestaurantFavoriteScreen> createState() => _RestaurantFavoriteScreenState();
 }
 
 class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> with SingleTickerProviderStateMixin{
   final double itemHeight = (size.height - kToolbarHeight - 80 - 24) / 3;
-
   final double itemWidth = size.width / 2;
-
   late List<Restaurant> res = restaurants;
-
   final FavoriteController c = Get.put(FavoriteController());
-
   late TabController tabController;
-
   late int indexTab = 0;
   @override
   void initState() {
@@ -49,7 +42,7 @@ class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> wit
       child: Column(
         children: <Widget>[
           ButtonsTabBar(
-            physics:  NeverScrollableScrollPhysics(),
+            physics:  const NeverScrollableScrollPhysics(),
             backgroundColor: greenC,
             height: 40.h,
             elevation: 10,

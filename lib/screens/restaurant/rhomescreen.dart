@@ -16,6 +16,12 @@ import 'package:thediet/ui/appbarrestaurant.dart';
 
 import '../../constant/myconstant.dart';
 
+// Home screen of restaurants have 4 TABS
+// Tab 1 : "RestaurantListScreen" : ِcontains a List(GridView) of Restaurant
+// Tab 2 : "RestaurantFavoriteScreen" : ِcontains a List(GridView) of Restaurant & Dishes
+// Tab 3 : "AccountScreen" : ِcontains a Account information
+// Tab 3 : "BasketScreen" : ِcontains a basket of Dishes and supplement information like price Total and quantity and more
+
 class RHomeScreen extends StatefulWidget{
   const RHomeScreen({super.key});
 
@@ -46,6 +52,7 @@ class _RHomeScreenState extends State<RHomeScreen> {
   @override
   void initState() {
     super.initState();
+    // ...
     if(c.goToBasket.value){
       _selectedTab = 3;
     }
@@ -56,7 +63,7 @@ class _RHomeScreenState extends State<RHomeScreen> {
     return Scaffold(
       resizeToAvoidBottomInset : false,
       backgroundColor: whiteC,
-      appBar: AppBarRestaurant(),
+      appBar: const AppBarRestaurant(),
       body: _pages[_selectedTab],
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,

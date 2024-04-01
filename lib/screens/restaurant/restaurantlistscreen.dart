@@ -8,6 +8,9 @@ import 'package:thediet/ui/restaurantitemui.dart';
 
 import '../../constant/myconstant.dart';
 
+// Consisting of Animated Background (AnimatedContainer) -  List View of Categories(CategoryItemUi) on top - GridView of RestaurantItemUi rest of screen
+// When Tap on CategoryItemUi, you change Dishes List (Filter List by category)
+// When Tap on RestaurantItemUi will take you To MenuOfRestaurantScreen
 class RestaurantListScreen extends StatefulWidget{
   const RestaurantListScreen({super.key});
 
@@ -57,6 +60,7 @@ class _RestaurantListScreenState extends State<RestaurantListScreen> {
       width: double.infinity,
       child: Stack(
         children: [
+          // Animated background ..
           AnimatedContainer (
            curve:  Curves.fastOutSlowIn,
             height: height,
@@ -67,6 +71,7 @@ class _RestaurantListScreenState extends State<RestaurantListScreen> {
           ),
           Column(
             children: [
+              // List View of Categories
               SizedBox(
                 height: 45.h,
                 child: ListView.builder(
@@ -149,9 +154,9 @@ class _RestaurantListScreenState extends State<RestaurantListScreen> {
                       ),
                     );
                   },
-
                 ),
               ),
+              // GridView of Restaurant (RestaurantItemUi in ui folder)
               Container(
                 height: heightD - 75.h - heightD*0.1 - 80,
                 child: GridView.builder(

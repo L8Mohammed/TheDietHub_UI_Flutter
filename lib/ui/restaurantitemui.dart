@@ -4,9 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:thediet/controller/favoritecontroller.dart';
-import 'package:thediet/controller/restaumenucontroller.dart';
 import 'package:thediet/models/restaurant.dart';
-import 'package:thediet/screens/restaurant/menuofrestaurant.dart';
+import 'package:thediet/screens/restaurant/menuofrestaurantscreen.dart';
 import 'package:thediet/tools.dart';
 
 import '../constant/myconstant.dart';
@@ -40,7 +39,7 @@ class _RestaurantItemUiState extends State<RestaurantItemUi> {
             curve: Curves.ease,
 
             duration: const Duration(milliseconds: 400),
-            child: MenuOfRestaurant(restaurant: widget.restaurant,),
+            child: MenuOfRestaurantScreen(restaurant: widget.restaurant,),
           ),
         );
       },

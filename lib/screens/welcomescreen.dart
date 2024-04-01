@@ -5,6 +5,10 @@ import 'package:page_transition/page_transition.dart';
 import 'package:thediet/constant/myconstant.dart';
 import 'package:thediet/screens/homescreen.dart';
 
+// First Screen show after Splash Screen
+// After this screen you can go to LoginScreen or SignUpScreen or HomeScreen
+// Consisting of three widget : Diet Hub's LOGO - Text welcome - Button Log In -  Button Sign Up - Button Login as a guest
+
 class WelcomeScreen extends StatelessWidget{
   const WelcomeScreen({super.key});
 
@@ -19,15 +23,19 @@ class WelcomeScreen extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          // Diet Hub's LOGO
           Padding(
             padding: EdgeInsets.only(top: heightD*0.03),
             child: Center(child: Image.asset("assets/images/logogreen.png",width: 250.w)),
           ),
+          // other's widget
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Text welcome
               Text("مرحبا بك",style: GoogleFonts.cairo(fontWeight: FontWeight.w700,fontSize: 26.sp),),
-              const SizedBox(height: 25,),
+              SizedBox(height: 25.h,),
+              // Button Log In
               SizedBox(
                 width: 250.w,
                 height: 50.h,
@@ -50,6 +58,7 @@ class WelcomeScreen extends StatelessWidget{
                 ),
               ),
               SizedBox(height: 13.h,),
+              // Button Sign Up
               SizedBox(
                 width: 250.w,
                 height: 50.h,
@@ -64,6 +73,7 @@ class WelcomeScreen extends StatelessWidget{
                 ),
               ),
               SizedBox(height: 15.h,),
+              // Button Login as a guest
               Container(
                   decoration: const BoxDecoration(
                       border: Border(bottom: BorderSide(

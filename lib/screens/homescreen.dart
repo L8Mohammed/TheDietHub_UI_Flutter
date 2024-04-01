@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +10,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:thediet/constant/myconstant.dart';
 import 'package:thediet/screens/restaurant/rhomescreen.dart';
 
+// HomeScreen To choose between restaurants and supplements
+// Consisting of ImageSlider, Two Text vertical(Column) and tow buttons(go to restaurant or Supplement)
 class HomeScreen extends StatefulWidget{
   const HomeScreen({super.key});
 
@@ -97,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              // Image Slider
               Column(
                 children: [
                   SingleChildScrollView(
@@ -126,7 +128,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              // Space between image slider & others widget
               SizedBox(height: 3.h,),
+              // Tow Text Vertical
               Column(
                 children: [
                   Text("إختر من التالي لإستكمال تصفح",style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 15.sp),),
@@ -134,6 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("التطبيق بكل سهولة وأمان",style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 15.sp),),
                 ],
               ),
+              // CardView for Restaurant
               Container(
                 height: 120.h,
                 width: widthD * 0.95,
@@ -189,6 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              // CardView for supplement
               Container(
                 height: 120.h,
                 width: widthD * 0.95,
