@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:thediet/controller/basketcontroller.dart';
@@ -28,10 +27,13 @@ class MenuOfRestaurantScreen extends StatefulWidget{
 
 class _MenuOfRestaurantScreenState extends State<MenuOfRestaurantScreen> {
 
-  final BasketController c = Get.put(BasketController());
+  // Be CareFul when you change this
   late int itemSelected = 1;
+  // Can change this variables
   late bool freeShip = true;
   late bool oldOrNew = false;
+  // data variable
+  final BasketController c = Get.put(BasketController());
 
   @override
   Widget build(BuildContext context) {

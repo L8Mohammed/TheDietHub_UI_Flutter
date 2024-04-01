@@ -7,7 +7,9 @@ import '../constant/myconstant.dart';
 import '../models/category.dart';
 
 class CategoryItemUi extends StatelessWidget{
+  // data variable
   Category c;
+  // 
   int index;
 
   CategoryItemUi({super.key,required this.c, required this.index});

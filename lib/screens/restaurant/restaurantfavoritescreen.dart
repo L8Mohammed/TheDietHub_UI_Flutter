@@ -17,12 +17,16 @@ class RestaurantFavoriteScreen extends StatefulWidget  {
 }
 
 class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> with SingleTickerProviderStateMixin{
+  // Design Variable you can change it BUT BE CAREFUL
+  // BE CAREFUL
   final double itemHeight = (size.height - kToolbarHeight - 80 - 24) / 3;
   final double itemWidth = size.width / 2;
-  late List<Restaurant> res = restaurants;
-  final FavoriteController c = Get.put(FavoriteController());
   late TabController tabController;
   late int indexTab = 0;
+  // Data Variables you can change it
+  late List<Restaurant> res = restaurants;
+  final FavoriteController c = Get.put(FavoriteController());
+
   @override
   void initState() {
     tabController = TabController(length: 2, vsync: this);
@@ -37,6 +41,7 @@ class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> wit
 
   @override
   Widget build(BuildContext context) {
+    // Tab Bar Controller to show Restaurants and Dishes
     return DefaultTabController(
       length: 2,
       child: Column(
@@ -83,7 +88,7 @@ class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> wit
       ),
     );
   }
-
+  // TabBarView of restaurant
   Widget tabOfRestaurantFavorite(){
     return Container(
       //height: heightD - 70 - heightD*0.1 - 80,
@@ -114,7 +119,7 @@ class _RestaurantFavoriteScreenState extends State<RestaurantFavoriteScreen> wit
         )
     );
   }
-
+  // Tab Bar View of Dishes
   Widget tabOfDishFavorite(){
     return Container(
       //height: heightD - 70 - heightD*0.1 - 80,

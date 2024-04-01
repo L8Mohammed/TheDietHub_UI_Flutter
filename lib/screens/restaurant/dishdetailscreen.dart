@@ -8,7 +8,8 @@ import 'package:line_icons/line_icons.dart';
 import 'package:thediet/ui/appbarrestaurant.dart';
 
 import '../../constant/myconstant.dart';
-
+// Details about the dish
+// Consisting of ..
 class DishDetailScreen extends StatefulWidget{
   const DishDetailScreen({super.key});
 
@@ -36,6 +37,7 @@ class _DishDetailScreenState extends State<DishDetailScreen> {
      body: SafeArea(
        child: Stack(
          children: [
+           // Background
            Align(
              alignment: Alignment.bottomCenter,
              child: Container(
@@ -51,7 +53,9 @@ class _DishDetailScreenState extends State<DishDetailScreen> {
                crossAxisAlignment: CrossAxisAlignment.center,
                mainAxisAlignment: MainAxisAlignment.start,
                children: [
+                 // space from top
                  SizedBox(height: heightD * 0.04,),
+                 // Image slider
                  SizedBox(
                    width: widthD * 0.8,
                    height: heightD * 0.25,
@@ -146,10 +150,11 @@ class _DishDetailScreenState extends State<DishDetailScreen> {
                      ),
                    ),
                  ),
-                 const SizedBox(height: 10,),
+                 SizedBox(height: 10.h,),
+                 // Dish Information (name, price, calories and rating)
                  Text("سمك مشوي",style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 25.sp),),
                  Text("600 ر.س",style: GoogleFonts.cairo(fontWeight: FontWeight.bold,fontSize: 25.sp,color: greenC),),
-                 const SizedBox(height: 5,),
+                 SizedBox(height: 5.h,),
                  Text.rich(
                    TextSpan(
                      style: GoogleFonts.cairo(fontWeight: FontWeight.w400,fontSize: 20.sp),
@@ -163,7 +168,6 @@ class _DishDetailScreenState extends State<DishDetailScreen> {
                      ],
                    ),
                  ),
-                 //const SizedBox(height: 5,),
                  Text.rich(
                    TextSpan(
                      style: GoogleFonts.cairo(fontWeight: FontWeight.w400,fontSize: 20.sp),

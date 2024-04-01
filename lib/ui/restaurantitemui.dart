@@ -20,8 +20,9 @@ class RestaurantItemUi extends StatefulWidget{
 }
 
 class _RestaurantItemUiState extends State<RestaurantItemUi> {
+  // Data variable
   final FavoriteController c = Get.put(FavoriteController());
-
+  // Design variables BE CAREFUL
   final double itemHeight = (size.height - kToolbarHeight - 80 - 24) / 3;
   final double itemWidth = size.width / 2;
   late bool isInFavList;

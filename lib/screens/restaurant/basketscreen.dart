@@ -10,7 +10,7 @@ import 'package:thediet/ui/dishcardui.dart';
 
 class BasketScreen extends StatelessWidget{
   BasketScreen({super.key});
-
+  // Data Variables tou can change it ..
   final BasketController c = Get.put(BasketController());
 
   @override
@@ -85,6 +85,7 @@ class BasketScreen extends StatelessWidget{
     );
   }
 
+ // Widget using Lottie package to show animated icon when basket is empty ..
   Widget basketIsEmptyUI(){
     return Center(
       child: Column(
